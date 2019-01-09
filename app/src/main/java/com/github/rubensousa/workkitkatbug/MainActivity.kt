@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
                 TestWorkerD::class.java,
                 TestWorkerE::class.java
             )
+            // Just to make sure the workers will start now
+            WorkManager.getInstance().cancelAllWork()
             for (classe in classes) {
                 WorkManager.getInstance().enqueueUniquePeriodicWork(
                     classe.simpleName,
