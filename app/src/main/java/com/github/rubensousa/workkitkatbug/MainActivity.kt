@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 WorkManager.getInstance().enqueueUniquePeriodicWork(
                     classe.simpleName,
                     ExistingPeriodicWorkPolicy.KEEP,
-                    PeriodicWorkRequest.Builder(classe, 15, TimeUnit.MINUTES)
+                    PeriodicWorkRequest.Builder(classe, 1, TimeUnit.HOURS)
                         .setConstraints(getDefaultConstraints()).build()
                 )
             }

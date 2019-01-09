@@ -8,6 +8,7 @@ import androidx.work.WorkerParameters
 class TestWorkerB(context: Context, params: WorkerParameters) : Worker(context, params) {
 
     override fun doWork(): Result {
+        Thread.sleep(300)
         Log.d(this::class.java.simpleName, "I did some work")
         return Result.success()
     }
