@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getDefaultConstraints() = Constraints.Builder()
-        .setRequiredNetworkType(NetworkType.UNMETERED)
         .setRequiresBatteryNotLow(true)
         .build()
 }
