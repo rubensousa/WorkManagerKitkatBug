@@ -2,7 +2,14 @@
 
 https://issuetracker.google.com/issues/122578012
 
-Only happens on API 19 to 22 when setRequiredNetworkType(NetworkType.UNMETERED) is used in Constraints
+Only happens on API 19 to 22 when there are constraints partially met:
+
+```
+Constraints.Builder()
+        .setRequiredNetworkType(NetworkType.UNMETERED) // Constraint not met
+        .setRequiresBatteryNotLow(true) // Constraint met
+        .build()
+```
 
 ```
 01-09 17:08:14.403 8109-8122/com.github.rubensousa.workkitkatbug I/WM-WorkerWrapper: Work [ id=611978b9-8da6-4ae8-8479-7827a8c95d4e, tags={ com.github.rubensousa.workkitkatbug.TestWorkerA } ] was cancelled
